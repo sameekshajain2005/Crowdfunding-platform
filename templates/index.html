@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Crowdfunding</title>
+</head>
+<body>
+    <h1>Active Campaigns</h1>
+
+{% if campaigns %}
+<ul>
+    {% for campaign in campaigns %}
+    <li>
+        <strong>{{ campaign.name }}</strong> - Goal: ${{ campaign.goal }}, Raised: ${{ campaign.raised }}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No active campaigns found.</p>
+{% endif %}
+</body>
+</html>
+
